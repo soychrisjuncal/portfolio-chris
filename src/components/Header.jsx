@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+import logo from '../assets/logo.svg';
 
 
 const Header = () => {
@@ -27,7 +28,7 @@ const Header = () => {
       <a href="#home" className="group flex items-center gap-3">
   <div className="w-10 h-10 flex-shrink-0">
     <img 
-     src="/vite.svg"
+  src={logo}
   alt="Chris Juncal Logo" 
       className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
     />
