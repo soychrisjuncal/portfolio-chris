@@ -59,21 +59,8 @@ const Skills = () => {
   ];
 
   return (
-<section id="skills" className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden">
-  {/* Video de fondo */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute top-0 left-0 w-full h-full object-cover opacity-20 dark:opacity-10"
-    style={{ filter: 'blur(80px)' }}
-  >
-    <source src="/portfolio-chris/bg-gradient.mp4" type="video/mp4" />
-  </video>
-  
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-white/80 dark:bg-slate-900/70"></div>
+<section id="skills" className="py-20 bg-slate-50/80 dark:bg-slate-800/80 backdrop-blur-sm relative overflow-hidden">
+ 
   
   {/* Ya está el relative z-10 en el container */}
       

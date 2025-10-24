@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import { projects } from '../data/projects';
+import TiltCard from './TiltCard';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -32,7 +33,7 @@ const Projects = () => {
   const filteredProjects = getFilteredProjects();
 
   return (
-    <section id="projects" className="py-20 bg-slate-100 dark:bg-slate-800">
+<section id="projects" className="py-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
       <div className="container mx-auto px-6 lg:px-12">
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white text-center mb-4">
           Mis <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">Proyectos</span>
@@ -61,10 +62,10 @@ const Projects = () => {
         {/* Grid de proyectos */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-cyan-400 dark:hover:border-cyan-400 transition-all duration-300 group"
-            >
+         <TiltCard
+  key={project.id}
+  className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-cyan-400 dark:hover:border-cyan-400 transition-all duration-300 group"
+>
               {/* Imagen del proyecto */}
               <div className="relative h-48 overflow-hidden bg-gradient-to-br from-cyan-500/20 to-pink-500/20">
                 <img
@@ -129,7 +130,7 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-            </div>
+           </TiltCard>
           ))}
         </div>
 

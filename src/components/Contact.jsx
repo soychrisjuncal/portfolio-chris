@@ -58,7 +58,7 @@ ${formData.message}
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-slate-900">
+<section id="contact" className="py-20 bg-white/90 dark:bg-slate-900/60 md:bg-slate-50/80 md:dark:bg-slate-800/80 backdrop-blur-sm">
       <div className="container mx-auto px-6 lg:px-12">
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white text-center mb-4">
           Hablemos de tu <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">Proyecto</span>
@@ -76,57 +76,44 @@ ${formData.message}
               </h3>
               
               <div className="space-y-4">
-                <a
-                  href="mailto:juncalcf@gmail.com"
-                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-cyan-400 dark:hover:border-cyan-400 transition-all duration-300 group"
-                >
-                  <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <FiMail className="text-2xl text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Email</p>
-                    <p className="text-slate-900 dark:text-white font-semibold">juncalcf@gmail.com</p>
-                  </div>
-                </a>
+  <a
+    href="mailto:juncalcf@gmail.com"
+    className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-cyan-400 dark:hover:border-cyan-400 transition-all duration-300 group"
+  >
+    <div className="p-3 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
+      <FiMail className="text-2xl text-cyan-600 dark:text-cyan-400" />
+    </div>
+    <div>
+      <p className="text-sm text-slate-600 dark:text-slate-400">Email</p>
+      <p className="text-slate-900 dark:text-white font-semibold">juncalcf@gmail.com</p>
+    </div>
+  </a>
 
-                <a
-                  href="https://wa.me/5491130540430"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-green-400 dark:hover:border-green-400 transition-all duration-300 group"
-                >
-                  <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <FaWhatsapp className="text-2xl text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">WhatsApp</p>
-                    <p className="text-slate-900 dark:text-white font-semibold">+54 11 3054 0430</p>
-                  </div>
-                </a>
+  <a
+    href="https://wa.me/5491130540430"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-green-400 dark:hover:border-green-400 transition-all duration-300 group"
+  >
+    <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
+      <FaWhatsapp className="text-2xl text-green-600 dark:text-green-400" />
+    </div>
+    <div>
+      <p className="text-sm text-slate-600 dark:text-slate-400">WhatsApp</p>
+      <p className="text-slate-900 dark:text-white font-semibold">+54 11 3054 0430</p>
+    </div>
+  </a>
 
-                <a
-                  href="tel:+5411305404300"
-                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-pink-400 dark:hover:border-pink-400 transition-all duration-300 group"
-                >
-                  <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <FiPhone className="text-2xl text-pink-600 dark:text-pink-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Teléfono</p>
-                    <p className="text-slate-900 dark:text-white font-semibold">+54 11 3054 0430</p>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
-                  <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                    <FiMapPin className="text-2xl text-purple-600 dark:text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Ubicación</p>
-                    <p className="text-slate-900 dark:text-white font-semibold">Buenos Aires, Argentina</p>
-                  </div>
-                </div>
-              </div>
+  <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+    <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+      <FiMapPin className="text-2xl text-purple-600 dark:text-purple-400" />
+    </div>
+    <div>
+      <p className="text-sm text-slate-600 dark:text-slate-400">Ubicación</p>
+      <p className="text-slate-900 dark:text-white font-semibold">Buenos Aires, Argentina</p>
+    </div>
+  </div>
+</div>
             </div>
 
             {/* Redes sociales */}

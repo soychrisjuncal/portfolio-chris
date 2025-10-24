@@ -5,19 +5,43 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Background3D from './components/Background3D'
+import AnimatedSection from './components/AnimatedSection'
 import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300">
-      <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      {/* Fondo 3D animado SIEMPRE VISIBLE */}
+      <Background3D />
+      
+      {/* Contenido por encima */}
+      <div className="relative z-10 min-h-screen">
+        <Header />
+        
+        <AnimatedSection>
+          <Hero />
+        </AnimatedSection>
+        
+        <AnimatedSection>
+          <About />
+        </AnimatedSection>
+        
+        <AnimatedSection>
+          <Skills />
+        </AnimatedSection>
+        
+        <AnimatedSection>
+          <Projects />
+        </AnimatedSection>
+        
+        <AnimatedSection>
+          <Contact />
+        </AnimatedSection>
+        
+        <Footer />
+      </div>
+    </>
   )
 }
 
