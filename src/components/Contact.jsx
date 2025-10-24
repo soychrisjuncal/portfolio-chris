@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiSend } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import logo from '/vite.svg'; 
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({

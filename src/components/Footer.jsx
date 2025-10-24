@@ -1,6 +1,6 @@
 import { FiGithub, FiLinkedin, FiMail, FiHeart } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import logo from '/vite.svg'; 
+ 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,8 +14,8 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <img 
-                   src={logo}  
-                alt="Chris Juncal Logo" 
+               src="/vite.svg"
+  alt="Chris Juncal Logo" 
                 className="w-10 h-10"
               />
               <div>

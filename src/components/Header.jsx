@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
-import logo from '/vite.svg'; //
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,8 +27,8 @@ const Header = () => {
       <a href="#home" className="group flex items-center gap-3">
   <div className="w-10 h-10 flex-shrink-0">
     <img 
-      src={logo}
-      alt="Chris Juncal Logo" 
+     src="/vite.svg"
+  alt="Chris Juncal Logo" 
       className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
     />
   </div>
