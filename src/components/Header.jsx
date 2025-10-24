@@ -23,16 +23,23 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center py-5">
-          <a href="#home" className="group">
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
-                Chris Juncal
-              </span>
-              <span className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">
-                Front-End Developer
-              </span>
-            </div>
-          </a>
+          <a href="#home" className="group flex items-center gap-3">
+  <div className="w-10 h-10 flex-shrink-0">
+    <img 
+      src="./public/vite.svg" 
+      alt="Chris Juncal Logo" 
+      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+    />
+  </div>
+  <div className="flex flex-col">
+    <span className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
+      Chris Juncal
+    </span>
+    <span className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">
+      Front-End Developer
+    </span>
+  </div>
+</a>
 
           <nav className="hidden md:flex items-center gap-8">
             <a href="#home" className="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium transition-colors duration-300">Inicio</a>

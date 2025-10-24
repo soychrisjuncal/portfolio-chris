@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiSend } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,16 +21,40 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Crear el mailto link con los datos del formulario
-    const mailtoLink = `mailto:juncalcf@gmail.com?subject=Contacto desde Portfolio - ${formData.name}&body=Nombre: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMensaje:%0D%0A${formData.message}`;
+    // Validar que los campos no estén vacíos
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus('Por favor completa todos los campos');
+      setTimeout(() => setStatus(''), 3000);
+      return;
+    }
+
+    // Formatear el mensaje para WhatsApp
+    const whatsappMessage = `
+*Nuevo contacto desde Portfolio* 🚀
+
+*Nombre:* ${formData.name}
+*Email:* ${formData.email}
+
+*Mensaje:*
+${formData.message}
+    `.trim();
+
+    // Número de WhatsApp (reemplaza con tu número - formato: código país sin + y número sin espacios ni guiones)
+    const phoneNumber = '5491130540430'; // Tu número: +54 9 11 3054 0430
     
-    window.location.href = mailtoLink;
+    // Crear el link de WhatsApp
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     
-    setStatus('Abriendo tu cliente de correo...');
+    // Abrir WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    setStatus('✅ Abriendo WhatsApp...');
+    
+    // Limpiar formulario después de 2 segundos
     setTimeout(() => {
-      setStatus('');
       setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+      setStatus('');
+    }, 2000);
   };
 
   return (
@@ -51,7 +76,7 @@ const Contact = () => {
               </h3>
               
               <div className="space-y-4">
-                 <a
+                <a
                   href="mailto:juncalcf@gmail.com"
                   className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-cyan-400 dark:hover:border-cyan-400 transition-all duration-300 group"
                 >
@@ -64,9 +89,24 @@ const Contact = () => {
                   </div>
                 </a>
 
-                 <a
+                <a
+                  href="https://wa.me/5491130540430"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-green-400 dark:hover:border-green-400 transition-all duration-300 group"
+                >
+                  <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaWhatsapp className="text-2xl text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">WhatsApp</p>
+                    <p className="text-slate-900 dark:text-white font-semibold">+54 11 3054 0430</p>
+                  </div>
+                </a>
+
+                <a
                   href="tel:+5411305404300"
-                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-cyan-400 dark:hover:border-cyan-400 transition-all duration-300 group"
+                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-pink-400 dark:hover:border-pink-400 transition-all duration-300 group"
                 >
                   <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     <FiPhone className="text-2xl text-pink-600 dark:text-pink-400" />
@@ -95,7 +135,7 @@ const Contact = () => {
                 Redes Sociales
               </h3>
               <div className="flex gap-4">
-                 <a
+                <a
                   href="https://linkedin.com/in/soychrisjuncal"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -119,9 +159,12 @@ const Contact = () => {
 
           {/* Formulario de contacto */}
           <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-lg border border-slate-200 dark:border-slate-700">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              Envíame un mensaje
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <FaWhatsapp className="text-3xl text-green-500" />
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Contáctame por WhatsApp
+              </h3>
+            </div>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -135,7 +178,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-transparent outline-none transition-all duration-300 text-slate-900 dark:text-white"
+                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-300 text-slate-900 dark:text-white"
                   placeholder="Tu nombre"
                 />
               </div>
@@ -151,7 +194,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-transparent outline-none transition-all duration-300 text-slate-900 dark:text-white"
+                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-300 text-slate-900 dark:text-white"
                   placeholder="tu@email.com"
                 />
               </div>
@@ -167,21 +210,26 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-transparent outline-none transition-all duration-300 text-slate-900 dark:text-white resize-none"
+                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-300 text-slate-900 dark:text-white resize-none"
                   placeholder="Cuéntame sobre tu proyecto..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
-                <span>Enviar Mensaje</span>
+                <FaWhatsapp className="text-2xl group-hover:scale-110 transition-transform duration-300" />
+                <span>Enviar por WhatsApp</span>
                 <FiSend className="group-hover:translate-x-1 transition-transform duration-300" />
               </button>
 
               {status && (
-                <p className="text-center text-cyan-600 dark:text-cyan-400 font-medium">
+                <p className={`text-center font-medium ${
+                  status.includes('✅') 
+                    ? 'text-green-600 dark:text-green-400' 
+                    : 'text-orange-600 dark:text-orange-400'
+                }`}>
                   {status}
                 </p>
               )}
