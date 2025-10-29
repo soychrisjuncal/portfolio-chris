@@ -1,5 +1,15 @@
 export const projects = {
   personal: [
+
+    {
+  id: 25, // ← Siguiente ID disponible
+  title: "Nicolo - Pedidos Online",
+  description: "Plataforma de pedidos online para heladería artesanal en Palermo. Sistema de combos y carrito de compras optimizado para móvil.",
+  image: "/projects/nicolo-menu.jpg",
+  url: "https://nicolo-v2-fixed.vercel.app/",
+  tech: ["React", "Next.js", "Vercel"],
+  category: "freelance" // ← Cambiá según corresponda
+},
     {
       id: 1,
       title: "Convertidor de Imágenes",
@@ -225,6 +235,8 @@ export const projects = {
       tech: ["HTML", "CSS", "JavaScript", "IA Integration"],
       category: "inversor"
     }
+
+    
   ]
 };
 
